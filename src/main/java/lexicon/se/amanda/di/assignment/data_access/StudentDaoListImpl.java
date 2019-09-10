@@ -37,10 +37,12 @@ public class StudentDaoListImpl implements StudentDao {
 	}
 
 	@Override
-	public void delete(int id) {
+	public Student delete(int id) {
+		Student student = find(id);
 		
-		students.remove(find(id));
+		students.remove(student);
 		
+		return student;
 	}
 
 }
